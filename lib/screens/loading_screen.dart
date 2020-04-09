@@ -10,8 +10,19 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     print('build Called');
+    
+    String myMargin = 'abc';
+    double myMarginAsDouble;
+    
+    try{
+      myMarginAsDouble = double.parse(myMargin);
+    }catch(exception){
+      print(exception);
+    }
+    
     return Scaffold(
-      body: Center(
+      body: Container(
+        margin: EdgeInsets.all(myMarginAsDouble ?? 30.0),
         child: RaisedButton(
           onPressed: () {
             getLocation();
