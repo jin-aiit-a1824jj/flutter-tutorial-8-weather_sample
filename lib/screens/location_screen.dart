@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weathersampel/screens/city_screen.dart';
 import 'package:weathersampel/services/weather.dart';
 import 'package:weathersampel/utilities/constants.dart';
 
@@ -44,7 +45,11 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return CityScreen();
+                      }));
+                    },
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,
